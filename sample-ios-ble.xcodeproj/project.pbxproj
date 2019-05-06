@@ -20,6 +20,7 @@
 		CC5B0FE62275FA85002717E0 /* ReactiveCocoa.framework.dSYM in Copy dSYM Files */ = {isa = PBXBuildFile; fileRef = CC5B0FE42275FA85002717E0 /* ReactiveCocoa.framework.dSYM */; };
 		CC5B0FE822760069002717E0 /* CentralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5B0FE722760069002717E0 /* CentralView.swift */; };
 		CC5B0FEA22760081002717E0 /* PeripheralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5B0FE922760081002717E0 /* PeripheralView.swift */; };
+		CC5B0FEC2280B807002717E0 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5B0FEB2280B807002717E0 /* UIImage+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,6 +54,7 @@
 		CC5B0FE42275FA85002717E0 /* ReactiveCocoa.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ReactiveCocoa.framework.dSYM; path = Carthage/Build/iOS/ReactiveCocoa.framework.dSYM; sourceTree = "<group>"; };
 		CC5B0FE722760069002717E0 /* CentralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralView.swift; sourceTree = "<group>"; };
 		CC5B0FE922760081002717E0 /* PeripheralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralView.swift; sourceTree = "<group>"; };
+		CC5B0FEB2280B807002717E0 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				CC5B0FC82275F264002717E0 /* Assets.xcassets */,
 				CC5B0FCA2275F264002717E0 /* LaunchScreen.storyboard */,
 				CC5B0FCD2275F264002717E0 /* Info.plist */,
+				CC5B0FEB2280B807002717E0 /* UIImage+.swift */,
 			);
 			path = "sample-ios-ble";
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC5B0FC42275F262002717E0 /* ViewController.swift in Sources */,
+				CC5B0FEC2280B807002717E0 /* UIImage+.swift in Sources */,
 				CC5B0FD82275F597002717E0 /* PeripheralViewController.swift in Sources */,
 				CC5B0FEA22760081002717E0 /* PeripheralView.swift in Sources */,
 				CC5B0FE822760069002717E0 /* CentralView.swift in Sources */,

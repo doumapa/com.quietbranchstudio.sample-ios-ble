@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreBluetooth
 
 class PeripheralViewController: UIViewController {
 
@@ -36,4 +37,19 @@ class PeripheralViewController: UIViewController {
    }
    */
 
+  private var peripheralManager: CBPeripheralManager?
+  private var characteristic: CBMutableCharacteristic?
+  
+  private func configure() {
+    peripheralManager = CBPeripheralManager(delegate: self, queue: nil)
+  }
+  
+}
+
+extension PeripheralViewController: CBPeripheralManagerDelegate {
+
+  func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
+    guard peripheral.state == .poweredOn else { return }
+  }
+  
 }
