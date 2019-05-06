@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,7 +12,30 @@
 		CC5B0FC72275F262002717E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC5B0FC52275F262002717E0 /* Main.storyboard */; };
 		CC5B0FC92275F264002717E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC5B0FC82275F264002717E0 /* Assets.xcassets */; };
 		CC5B0FCC2275F264002717E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC5B0FCA2275F264002717E0 /* LaunchScreen.storyboard */; };
+		CC5B0FD82275F597002717E0 /* PeripheralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5B0FD72275F597002717E0 /* PeripheralViewController.swift */; };
+		CC5B0FDA2275F5C3002717E0 /* CentralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5B0FD92275F5C3002717E0 /* CentralViewController.swift */; };
+		CC5B0FDE2275F8AB002717E0 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC5B0FDC2275F8AB002717E0 /* ReactiveCocoa.framework */; };
+		CC5B0FDF2275F8AB002717E0 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC5B0FDD2275F8AB002717E0 /* ReactiveSwift.framework */; };
+		CC5B0FE52275FA85002717E0 /* ReactiveSwift.framework.dSYM in Copy dSYM Files */ = {isa = PBXBuildFile; fileRef = CC5B0FE32275FA85002717E0 /* ReactiveSwift.framework.dSYM */; };
+		CC5B0FE62275FA85002717E0 /* ReactiveCocoa.framework.dSYM in Copy dSYM Files */ = {isa = PBXBuildFile; fileRef = CC5B0FE42275FA85002717E0 /* ReactiveCocoa.framework.dSYM */; };
+		CC5B0FE822760069002717E0 /* CentralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5B0FE722760069002717E0 /* CentralView.swift */; };
+		CC5B0FEA22760081002717E0 /* PeripheralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5B0FE922760081002717E0 /* PeripheralView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CC5B0FE22275FA4E002717E0 /* Copy dSYM Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				CC5B0FE52275FA85002717E0 /* ReactiveSwift.framework.dSYM in Copy dSYM Files */,
+				CC5B0FE62275FA85002717E0 /* ReactiveCocoa.framework.dSYM in Copy dSYM Files */,
+			);
+			name = "Copy dSYM Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CC5B0FBE2275F262002717E0 /* sample-ios-ble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sample-ios-ble.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +45,14 @@
 		CC5B0FC82275F264002717E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC5B0FCB2275F264002717E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC5B0FCD2275F264002717E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC5B0FD72275F597002717E0 /* PeripheralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralViewController.swift; sourceTree = "<group>"; };
+		CC5B0FD92275F5C3002717E0 /* CentralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralViewController.swift; sourceTree = "<group>"; };
+		CC5B0FDC2275F8AB002717E0 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		CC5B0FDD2275F8AB002717E0 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
+		CC5B0FE32275FA85002717E0 /* ReactiveSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ReactiveSwift.framework.dSYM; path = Carthage/Build/iOS/ReactiveSwift.framework.dSYM; sourceTree = "<group>"; };
+		CC5B0FE42275FA85002717E0 /* ReactiveCocoa.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ReactiveCocoa.framework.dSYM; path = Carthage/Build/iOS/ReactiveCocoa.framework.dSYM; sourceTree = "<group>"; };
+		CC5B0FE722760069002717E0 /* CentralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralView.swift; sourceTree = "<group>"; };
+		CC5B0FE922760081002717E0 /* PeripheralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC5B0FDF2275F8AB002717E0 /* ReactiveSwift.framework in Frameworks */,
+				CC5B0FDE2275F8AB002717E0 /* ReactiveCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +73,8 @@
 			children = (
 				CC5B0FC02275F262002717E0 /* sample-ios-ble */,
 				CC5B0FBF2275F262002717E0 /* Products */,
+				CC5B0FDB2275F8AA002717E0 /* Frameworks */,
+				CC5B0FE12275F975002717E0 /* dSYMs */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +91,34 @@
 			children = (
 				CC5B0FC12275F262002717E0 /* AppDelegate.swift */,
 				CC5B0FC32275F262002717E0 /* ViewController.swift */,
+				CC5B0FD72275F597002717E0 /* PeripheralViewController.swift */,
+				CC5B0FE922760081002717E0 /* PeripheralView.swift */,
+				CC5B0FD92275F5C3002717E0 /* CentralViewController.swift */,
+				CC5B0FE722760069002717E0 /* CentralView.swift */,
 				CC5B0FC52275F262002717E0 /* Main.storyboard */,
 				CC5B0FC82275F264002717E0 /* Assets.xcassets */,
 				CC5B0FCA2275F264002717E0 /* LaunchScreen.storyboard */,
 				CC5B0FCD2275F264002717E0 /* Info.plist */,
 			);
 			path = "sample-ios-ble";
+			sourceTree = "<group>";
+		};
+		CC5B0FDB2275F8AA002717E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC5B0FDC2275F8AB002717E0 /* ReactiveCocoa.framework */,
+				CC5B0FDD2275F8AB002717E0 /* ReactiveSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CC5B0FE12275F975002717E0 /* dSYMs */ = {
+			isa = PBXGroup;
+			children = (
+				CC5B0FE42275FA85002717E0 /* ReactiveCocoa.framework.dSYM */,
+				CC5B0FE32275FA85002717E0 /* ReactiveSwift.framework.dSYM */,
+			);
+			name = dSYMs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +131,8 @@
 				CC5B0FBA2275F262002717E0 /* Sources */,
 				CC5B0FBB2275F262002717E0 /* Frameworks */,
 				CC5B0FBC2275F262002717E0 /* Resources */,
+				CC5B0FE02275F8E3002717E0 /* Carthage copy-frameworks */,
+				CC5B0FE22275FA4E002717E0 /* Copy dSYM Files */,
 			);
 			buildRules = (
 			);
@@ -92,7 +151,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
-				ORGANIZATIONNAME = "makoto kaneko";
+				ORGANIZATIONNAME = "quiet branch studio";
 				TargetAttributes = {
 					CC5B0FBD2275F262002717E0 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -130,12 +189,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CC5B0FE02275F8E3002717E0 /* Carthage copy-frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/frameworks_input.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "Carthage copy-frameworks";
+			outputFileListPaths = (
+				"$(SRCROOT)/frameworks_output.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CC5B0FBA2275F262002717E0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CC5B0FC42275F262002717E0 /* ViewController.swift in Sources */,
+				CC5B0FD82275F597002717E0 /* PeripheralViewController.swift in Sources */,
+				CC5B0FEA22760081002717E0 /* PeripheralView.swift in Sources */,
+				CC5B0FE822760069002717E0 /* CentralView.swift in Sources */,
+				CC5B0FDA2275F5C3002717E0 /* CentralViewController.swift in Sources */,
 				CC5B0FC22275F262002717E0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,7 +299,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -268,7 +354,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -284,6 +370,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7T2Z6RR4DM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "sample-ios-ble/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -292,7 +382,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.quietbranchstudio.sample-ios-ble";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -302,6 +392,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7T2Z6RR4DM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "sample-ios-ble/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -310,7 +404,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.quietbranchstudio.sample-ios-ble";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

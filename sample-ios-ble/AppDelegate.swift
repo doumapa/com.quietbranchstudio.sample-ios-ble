@@ -3,7 +3,7 @@
 //  sample-ios-ble
 //
 //  Created by makoto kaneko on 2019/04/28.
-//  Copyright © 2019 makoto kaneko. All rights reserved.
+//  Copyright © 2019 quiet branch studio. All rights reserved.
 //
 
 import UIKit
