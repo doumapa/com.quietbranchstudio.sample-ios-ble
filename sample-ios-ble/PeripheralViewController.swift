@@ -17,13 +17,14 @@ class PeripheralViewController: UIViewController {
     }
     set {
       (view as! PeripheralView).viewModel = newValue
+      bind()
     }
   }
 
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Do any additional setup after loading the view.
+    configure()
   }
   
   
@@ -44,12 +45,85 @@ class PeripheralViewController: UIViewController {
     peripheralManager = CBPeripheralManager(delegate: self, queue: nil)
   }
   
+  private func bind() {
+    guard let viewModel = viewModel else { return }
+    
+    viewModel.isActive.signal
+    .take(duringLifetimeOf: self)
+      .observeValues { [weak self] (isActive: Bool) in
+        guard let peripheralManager = self?.peripheralManager else { return }
+        if isActive {
+          let data: [String : Any] = [
+            CBAdvertisementDataLocalNameKey: "\(PeripheralModel.advertisementName)",
+            CBAdvertisementDataServiceUUIDsKey: PeripheralModel.UUID.service.uuid
+          ]
+          peripheralManager.startAdvertising(data)
+        } else {
+          peripheralManager.stopAdvertising()
+        }
+    }
+
+    viewModel.sendText.signal
+      .take(duringLifetimeOf: self)
+      .observeValues { [weak self] (text: String) in
+        guard let peripheralManager = self?.peripheralManager else { return }
+        guard let characteristic = self?.characteristic,
+          let centrals = characteristic.subscribedCentrals, !centrals.isEmpty else { return }
+        peripheralManager.updateValue(PeripheralModel(text: text).data, for: characteristic, onSubscribedCentrals: nil)
+    }
+  }
+  
 }
 
 extension PeripheralViewController: CBPeripheralManagerDelegate {
 
   func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
-    guard peripheral.state == .poweredOn else { return }
+
+
+
+
+    guard let peripheralManager = peripheralManager, peripheral.state == .poweredOn else { return }
+    let characteristic = CBMutableCharacteristic(type: PeripheralModel.UUID.characteristic.uuid,
+                                                 properties: .notify,
+                                                 value: nil,
+                                                 permissions: .readable)
+    let service = CBMutableService(type: PeripheralModel.UUID.service.uuid,
+                                   primary: true)
+    service.characteristics = [characteristic]
+    self.characteristic = characteristic
+    peripheralManager.add(service)
+  }
+  
+  func peripheralManager(_ peripheral: CBPeripheralManager, didAdd service: CBService, error: Error?) {
+    
+  }
+  
+  func peripheralManagerDidStartAdvertising(_ peripheral: CBPeripheralManager, error: Error?) {
+    
+  }
+  
+  func peripheralManager(_ peripheral: CBPeripheralManager, central: CBCentral, didSubscribeTo characteristic: CBCharacteristic) {
+
+  }
+  
+  func peripheralManager(_ peripheral: CBPeripheralManager, central: CBCentral, didUnsubscribeFrom characteristic: CBCharacteristic) {
+
+  }
+  
+  func peripheralManagerIsReady(toUpdateSubscribers peripheral: CBPeripheralManager) {
+
+  }
+
+  func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveRead request: CBATTRequest) {
+
+  }
+  
+  func peripheralManager(_ peripheral: CBPeripheralManager, willRestoreState dict: [String : Any]) {
+
+  }
+  
+  func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveWrite requests: [CBATTRequest]) {
+
   }
   
 }
