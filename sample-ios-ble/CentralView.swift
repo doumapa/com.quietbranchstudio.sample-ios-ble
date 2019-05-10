@@ -24,9 +24,11 @@ class CentralView: UIView {
 
   private func bind() {
     guard let viewModel = viewModel else { return }
-    peripheralNameField.reactive.text <~ viewModel.peripheralName
-    receiveTextLabel.reactive.text <~ viewModel.receiveText
-    scanButton.reactive.pressed = CocoaAction(viewModel.scanAction)
+//    peripheralNameField.reactive.text <~ viewModel.peripheralName
+//    receiveTextLabel.reactive.text <~ viewModel.receiveText
+    if let scanAction = viewModel.scanAction {
+      scanButton.reactive.pressed = CocoaAction(scanAction)
+    }
   }
   
   /*
@@ -41,27 +43,6 @@ class CentralView: UIView {
 
 class CentralViewModel {
   
-  let peripheralName: MutableProperty<String>
-  let scanAction: Action<Void, Void, Never>
+  var scanAction: Action<Void, Void, Never>?
 
-  let receiveText: MutableProperty<String> = MutableProperty("")
-
-  init(peripheral: String, validationRule: @escaping (String) -> Bool = validateCredentials) {
-    let peripheralName = MutableProperty(peripheral)
-
-    let isValid = MutableProperty(validationRule(peripheral))
-    isValid <~ peripheralName.producer.map(validationRule)
-    
-    let scanAction = Action<Void, Void, Never>(enabledIf: isValid) { _ in
-      return SignalProducer.empty
-    }
-    
-    self.peripheralName = peripheralName
-    self.scanAction = scanAction
-  }
-
-}
-
-private func validateCredentials(peripheral: String) -> Bool {
-  return peripheral.count > 0
 }

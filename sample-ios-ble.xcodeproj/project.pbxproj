@@ -23,6 +23,10 @@
 		CC5B0FEC2280B807002717E0 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5B0FEB2280B807002717E0 /* UIImage+.swift */; };
 		CCE60791228140E30063DB1F /* PeripheralModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE60790228140E30063DB1F /* PeripheralModel.swift */; };
 		CCE60793228174790063DB1F /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE60792228174790063DB1F /* Defaults.swift */; };
+		CCE607952283DE6C0063DB1F /* BLEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE607942283DE6C0063DB1F /* BLEManager.swift */; };
+		CCE6079D22850FBF0063DB1F /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE6079C22850FBE0063DB1F /* AppError.swift */; };
+		CCE6079F2285507B0063DB1F /* Dictionary+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE6079E2285507B0063DB1F /* Dictionary+.swift */; };
+		CCE607A122855C580063DB1F /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE607A022855C580063DB1F /* Array+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,6 +63,10 @@
 		CC5B0FEB2280B807002717E0 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		CCE60790228140E30063DB1F /* PeripheralModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralModel.swift; sourceTree = "<group>"; };
 		CCE60792228174790063DB1F /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		CCE607942283DE6C0063DB1F /* BLEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManager.swift; sourceTree = "<group>"; };
+		CCE6079C22850FBE0063DB1F /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		CCE6079E2285507B0063DB1F /* Dictionary+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+.swift"; sourceTree = "<group>"; };
+		CCE607A022855C580063DB1F /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,14 +108,18 @@
 				CC5B0FD72275F597002717E0 /* PeripheralViewController.swift */,
 				CC5B0FE922760081002717E0 /* PeripheralView.swift */,
 				CCE60790228140E30063DB1F /* PeripheralModel.swift */,
+				CCE607942283DE6C0063DB1F /* BLEManager.swift */,
 				CC5B0FD92275F5C3002717E0 /* CentralViewController.swift */,
 				CC5B0FE722760069002717E0 /* CentralView.swift */,
 				CC5B0FC52275F262002717E0 /* Main.storyboard */,
+				CCE60792228174790063DB1F /* Defaults.swift */,
+				CCE6079C22850FBE0063DB1F /* AppError.swift */,
+				CC5B0FEB2280B807002717E0 /* UIImage+.swift */,
+				CCE607A022855C580063DB1F /* Array+.swift */,
+				CCE6079E2285507B0063DB1F /* Dictionary+.swift */,
 				CC5B0FC82275F264002717E0 /* Assets.xcassets */,
 				CC5B0FCA2275F264002717E0 /* LaunchScreen.storyboard */,
 				CC5B0FCD2275F264002717E0 /* Info.plist */,
-				CC5B0FEB2280B807002717E0 /* UIImage+.swift */,
-				CCE60792228174790063DB1F /* Defaults.swift */,
 			);
 			path = "sample-ios-ble";
 			sourceTree = "<group>";
@@ -226,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCE607A122855C580063DB1F /* Array+.swift in Sources */,
 				CC5B0FC42275F262002717E0 /* ViewController.swift in Sources */,
 				CCE60793228174790063DB1F /* Defaults.swift in Sources */,
 				CC5B0FEC2280B807002717E0 /* UIImage+.swift in Sources */,
@@ -233,6 +246,9 @@
 				CC5B0FEA22760081002717E0 /* PeripheralView.swift in Sources */,
 				CC5B0FE822760069002717E0 /* CentralView.swift in Sources */,
 				CCE60791228140E30063DB1F /* PeripheralModel.swift in Sources */,
+				CCE607952283DE6C0063DB1F /* BLEManager.swift in Sources */,
+				CCE6079D22850FBF0063DB1F /* AppError.swift in Sources */,
+				CCE6079F2285507B0063DB1F /* Dictionary+.swift in Sources */,
 				CC5B0FDA2275F5C3002717E0 /* CentralViewController.swift in Sources */,
 				CC5B0FC22275F262002717E0 /* AppDelegate.swift in Sources */,
 			);

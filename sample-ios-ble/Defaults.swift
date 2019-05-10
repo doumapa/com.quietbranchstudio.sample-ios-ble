@@ -1,5 +1,5 @@
 //
-//  UserDefaults+.swift
+//  Defaults.swift
 //  sample-ios-ble
 //
 //  Created by 金子実 on 2019/05/07.
@@ -14,19 +14,35 @@ protocol KeyNamespaceable {
 
 // MARK: - キーの衝突を防ぐためにネームスペースを付加するプロトコル拡張実装
 extension KeyNamespaceable {
-
+  
   func namespaced<T: RawRepresentable>(_ key: T) -> String {
     return "\(Self.self).\(key.rawValue)"
   }
-
+  
 }
 
-protocol StringDefaultSettable : KeyNamespaceable {
+protocol StringKeySettable: KeyNamespaceable where StringKey.RawValue == String {
   associatedtype StringKey : RawRepresentable
 }
 
-// MARK: - 文字列値のためのプロトコル拡張実装
-extension StringDefaultSettable where StringKey.RawValue == String {
+protocol BoolKeySettable: KeyNamespaceable where BoolKey.RawValue == String {
+  associatedtype BoolKey : RawRepresentable
+}
+
+protocol IntegerKeySettable: KeyNamespaceable where IntegerKey.RawValue == String {
+  associatedtype IntegerKey : RawRepresentable
+}
+
+protocol ObjectKeySettable : KeyNamespaceable where ObjectKey.RawValue == String {
+  associatedtype ObjectKey : RawRepresentable
+}
+
+// MARK: - 文字列キーのためのプロトコル拡張実装
+
+protocol StringDefaultSettable: StringKeySettable {
+}
+
+extension StringDefaultSettable {
   
   func value(forKey key: StringKey) -> String? {
     let key = namespaced(key)
@@ -55,12 +71,12 @@ extension StringDefaultSettable where StringKey.RawValue == String {
   
 }
 
-protocol BoolDefaultSettable : KeyNamespaceable {
-  associatedtype BoolKey : RawRepresentable
+// MARK: - Boolキーのためのプロトコル拡張実装
+
+protocol BoolDefaultSettable: BoolKeySettable {
 }
 
-// MARK: - Bool値のためのプロトコル拡張実装
-extension BoolDefaultSettable where BoolKey.RawValue == String {
+extension BoolDefaultSettable {
   
   func value(forKey key: BoolKey) -> Bool {
     let key = namespaced(key)
@@ -84,12 +100,12 @@ extension BoolDefaultSettable where BoolKey.RawValue == String {
   
 }
 
-protocol IntegerDefaultSettable : KeyNamespaceable {
-  associatedtype IntegerKey : RawRepresentable
+// MARK: - Integerキーのためのプロトコル拡張実装
+
+protocol IntegerDefaultSettable: IntegerKeySettable {
 }
 
-// MARK: - Integer値のためのプロトコル拡張実装
-extension IntegerDefaultSettable where IntegerKey.RawValue == String {
+extension IntegerDefaultSettable {
   
   func value(forKey key: IntegerKey) -> Int {
     let key = namespaced(key)
@@ -113,12 +129,12 @@ extension IntegerDefaultSettable where IntegerKey.RawValue == String {
   
 }
 
-protocol ObjectDefaultSettable : KeyNamespaceable {
-  associatedtype ObjectKey : RawRepresentable
+// MARK: - Objectキーのためのプロトコル拡張実装
+
+protocol ObjectDefaultSettable: ObjectKeySettable {
 }
 
-// MARK: - Object値のためのプロトコル拡張実装
-extension ObjectDefaultSettable where ObjectKey.RawValue == String {
+extension ObjectDefaultSettable {
   
   func value(forKey key: ObjectKey) -> Any? {
     let key = namespaced(key)
@@ -146,6 +162,8 @@ extension ObjectDefaultSettable where ObjectKey.RawValue == String {
   }
   
 }
+
+// MARK: - UserDefaults のキー定義
 
 struct Defaults : StringDefaultSettable {
 

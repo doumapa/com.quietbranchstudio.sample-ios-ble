@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -43,7 +42,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="Central"/>
                                         <connections>
-                                            <segue destination="Dkn-N2-uQ5" kind="show" id="lWI-H4-ifV"/>
+                                            <segue destination="Dkn-N2-uQ5" kind="show" identifier="showCentral" id="lWI-H4-ifV"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -69,7 +68,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="b8p-Fw-1Oa">
-                                <rect key="frame" x="41.5" y="304" width="331" height="288"/>
+                                <rect key="frame" x="41.5" y="306" width="331" height="284"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peripheral Status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ArU-Qk-5dm">
                                         <rect key="frame" x="0.0" y="0.0" width="331" height="20.5"/>
@@ -147,12 +146,9 @@
                                             <constraint firstAttribute="height" constant="40" id="8Dd-Cp-gin"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NaQ-3h-EPN">
-                                        <rect key="frame" x="0.0" y="254" width="331" height="34"/>
-                                        <color key="backgroundColor" name="Form_Submit_Background_Enable"/>
-                                        <state key="normal" title="Send">
-                                            <color key="titleColor" name="Form_Submit_Text_Enable"/>
-                                        </state>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NaQ-3h-EPN">
+                                        <rect key="frame" x="0.0" y="254" width="331" height="30"/>
+                                        <state key="normal" title="Send"/>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -260,12 +256,4 @@
             <point key="canvasLocation" x="1580" y="538"/>
         </scene>
     </scenes>
-    <resources>
-        <namedColor name="Form_Submit_Background_Enable">
-            <color name="systemBlueColor" catalog="System" colorSpace="catalog"/>
-        </namedColor>
-        <namedColor name="Form_Submit_Text_Enable">
-            <color name="controlTextColor" catalog="System" colorSpace="catalog"/>
-        </namedColor>
-    </resources>
 </document>
